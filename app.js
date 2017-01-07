@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import {
-  NativeModules,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+import { getSystemVolume } from './volume'
 
 export default class ReactNativeBridgeExample extends Component {
 
   componentDidMount () {
-    const volume = NativeModules.Volume;
-    volume.getSystemVolume((error, volume) => window.alert(volume))
+    getSystemVolume((error, volume) => window.alert(volume))
   }
 
   render() {
